@@ -1,9 +1,8 @@
 # Dotfiles
 
 [![GPL-3.0 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
-[![Wiki](https://img.shields.io/badge/📖-Wiki-8CA1AF)](https://gitlab.com/anmomu92/dotfiles/-/wikis/home)
 [![State](https://img.shields.io/badge/estado-activo-brightgreen)]()
-[![System](https://img.shields.io/badge/🖥️-Linux/macOS-999999)]()
+[![System](https://img.shields.io/badge/🖥️-Arch)]()
 [![Manteinance](https://img.shields.io/badge/👤-anmomu92-yellow)]()
 
 This repository contains dotfiles specific to my Arch Linux distro. As I have different distros for different hardware and/or purpose, I have decided to make different repos for each of them, so my configuration directory is not cluttered. In this particular case, most of the dotfiles are based on the excelent work carried out by [ML4W's dotfiles](https://github.com/mylinuxforwork/dotfiles).
