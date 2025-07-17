@@ -20,8 +20,7 @@ This repository contains dotfiles specific to my Arch Linux distro. As I have di
 
 To perform the installation, run the `install.sh` script. This script will backup any dotfile you may have and will symlink the ones contained in the this repo. 
 
-```
-⚠️ Warning 
+## ⚠️ Warning 
 
 These dotfiles are customized for my preferences. Use at your own risk! It is recommended:
 
@@ -29,11 +28,10 @@ These dotfiles are customized for my preferences. Use at your own risk! It is re
 2. To review the dotfiles before applying them.
 3. To apply dotfiles gradually.
 
-🤝 Contributions
+## 🤝 Contributions
 
 Though these dotfiles are personal, any kind of suggestion or improvement is suggested. Please, open an issue or merge request to discuss changes.
 
-📜 License
+## 📜 License
 
 GPL-3.0 license.
-```
