@@ -18,32 +18,9 @@ This repository contains dotfiles specific to my Arch Linux distro. As I have di
 
 ## 🛠️ Installation
 
-So far, there is no installation script. Thus, in order to install a given dotfile, you have manually copy it to your app config location. I plan to do an installation script in the function.
-
-> **NOTE**  
-> Installation script is a TODO task.
-
-### Bare repo
-Add the following line in your shell's dotfile (`.bashrc`, `.zshrc`...):
-
-```bash
-alias dg='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-```
-
-Run these instructions:
-
-```bash
-echo ".dotfiles >> .gitignore"
-git clone --bare https://gitlab.com/anmomu92/dotfiles
-dg checkout     # if error, remove indicated files after backup
-dg config --local status.showUntrackedFiles no
-```
-
-This method will pull my dotfiles. In case you want to customize them to your likings, fork the repo and substitute the URL accordingly.
-
+To perform the installation, run the `install.sh` script. This script will backup any dotfile you may have and will symlink the ones contained in the this repo. 
 
 ```
-
 ⚠️ Warning 
 
 These dotfiles are customized for my preferences. Use at your own risk! It is recommended:
@@ -52,10 +29,11 @@ These dotfiles are customized for my preferences. Use at your own risk! It is re
 2. To review the dotfiles before applying them.
 3. To apply dotfiles gradually.
 
-🤝 Contributios
+🤝 Contributions
 
 Though these dotfiles are personal, any kind of suggestion or improvement is suggested. Please, open an issue or merge request to discuss changes.
 
 📜 License
 
 GPL-3.0 license.
+```
