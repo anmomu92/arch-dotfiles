@@ -1,0 +1,94 @@
+#!/usr/bin/env python3
+
+"""
+Dependencies:
+    - https://github.com/buriy/python-readability
+    - https://github.com/bookieio/breadability
+Usage:
+   :spawn --userscript readability
+   or
+   add config.bind(',r', 'hint links spawn --userscript readability') to your config.py file
+ 
+"""
+
+import sys
+import os
+import codecs
+
+try:
+    from readability import Document
+except ImportError:
+    print("Please install `readability-lxml` with pip.")
+    sys.exit(1)
+
+try:
+    import requests
+except ImportError:
+    print("Please install `requests` with pip.")
+    sys.exit(1)
+
+# Choose mode: from arg or from qutebrowser env
+if len(sys.argv) > 1:
+    url = sys.argv[1]
+    html = requests.get(url).text
+else:
+    try:
+        with codecs.open(os.environ['QUTE_HTML'], 'r', 'utf-8') as f:
+            html = f.read()
+        url = os.environ['QUTE_URL']
+    except KeyError:
+        print("No URL provided and not running in qutebrowser context.")
+        sys.exit(1)
+
+# Extract readable content
+doc = Document(html)
+title = doc.title()
+summary = doc.summary()
+
+# Style
+HEADER = f"""<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {{
+            zoom: 1;                        /* Text zoom */
+            background-color: #fbf1c7;   /* Gruvbox Light bg */
+            color: #3c3836;              /* Gruvbox Light fg */
+            font-family: Georgia, serif;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 2em;
+            text-align: justify;
+            line-height: 1.6;
+        }}
+        h1, h2, h3 {{
+            color: #b57614;
+        }}
+        a {{
+            color: #076678;
+        }}
+    </style>
+</head>
+<body>
+"""
+
+# Output path
+tmpfile = os.path.join(
+    os.environ.get('XDG_RUNTIME_DIR', '/tmp'),
+    'readability_output.html'
+)
+
+with codecs.open(tmpfile, 'w', 'utf-8') as f:
+    f.write(HEADER + summary + "</body></html>")
+
+# If running inside qutebrowser userscript
+if 'QUTE_FIFO' in os.environ:
+    with open(os.environ['QUTE_FIFO'], 'w') as fifo:
+        fifo.write(f'open -t file://{tmpfile}\n')
+else:
+    # Otherwise launch manually
+    os.system(f'qutebrowser --target tab file://{tmpfile}')
+
