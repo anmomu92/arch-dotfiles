@@ -1,5 +1,5 @@
-.config/qutebrowser/autoconfig.yml         # Generated if you use :set or GUI
-.config/qutebrowser/qsettings/             # Qt binary settings
-.config/qutebrowser/state/                 # Sessions, history, cache
-.config/qutebrowser/crash_backup/          # Crash recovery
-.config/qutebrowser/webengine/             # Web engine cache/state
+.config/qutebrowser/autoconfig.yml
+.config/qutebrowser/qsettings/
+.config/qutebrowser/state/
+.config/qutebrowser/crash_backup/
+.config/qutebrowser/webengine/
