@@ -1,0 +1,5 @@
+autoconfig.yml         # Generated if you use :set or GUI
+qsettings/             # Qt binary settings
+state/                 # Sessions, history, cache
+crash_backup/          # Crash recovery
+webengine/             # Web engine cache/state
