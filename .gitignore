@@ -3,3 +3,4 @@
 .config/qutebrowser/state/
 .config/qutebrowser/crash_backup/
 .config/qutebrowser/webengine/
+.config/qutebrowser/quickmarks

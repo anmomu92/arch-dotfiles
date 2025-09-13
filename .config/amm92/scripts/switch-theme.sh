@@ -45,7 +45,7 @@ nwg-look -a     # Apply changes
 nwg-look -x     # Export changes
 
 # Dock
-if [ "$DOCK_STATE" == "active" ]; then 
+if [ $(pgrep -f nwg-dock-hyprland) ]; then 
 	echo "Dock theme changed" | tee -a $LOG_FILE 
 	$HOME/.config/nwg-dock-hyprland/launch.sh
 fi
