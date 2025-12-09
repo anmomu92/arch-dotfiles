@@ -24,6 +24,11 @@ if [[ ! -d "${BACKUP_DIR}/state" ]]; then
 	mkdir -p "${BACKUP_DIR}/state"
 fi	
 
+# Create state backup dir
+if [[ ! -d "${BACKUP_DIR}/scripts" ]]; then
+	mkdir -p "${BACKUP_DIR}/scripts"
+fi	
+
 # Create state dir
 if [[ ! -d "${XDG_STATE_HOME:="$HOME/.local/state"}" ]]; then
 	mkdir -p "$HOME/.local/state"
@@ -90,6 +95,24 @@ elif [[ -d "${XDG_STATE_HOME}/amm92" && ! -L "${XDG_STATE_HOME}/amm92" ]]; then
 fi
 
 ln -s "${REPO_DIR}/.state/amm92" "${XDG_STATE_HOME}/"
+
+sleep $TIME_3
+
+echo ":: LINKING SCRIPTS FILES DIR." | tee -a "$LOG_FILE"
+
+sleep $TIME_2
+
+# Remove previous link or backup
+if [[ -L "${SCRIPTS_DIR}" ]]; then
+	echo "  Removing scripts symbolic link" | tee -a "$LOG_FILE"
+	rm "${SCRIPTS_DIR}"
+elif [[ -d "${SCRIPTS_DIR}" && ! -L "${SCRIPTS_DIR}" ]]; then
+	echo "  Backing up scripts dir" | tee -a "$LOG_FILE"
+	rm -rf "${BACKUP_DIR}/scripts"
+	mv -f "${SCRIPTS_DIR}" "${BACKUP_DIR}/scripts/"
+fi
+
+ln -s "${REPO_DIR}/.scripts" "${HOME}/.local/scripts"
 
 sleep $TIME_3
 
