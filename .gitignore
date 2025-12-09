@@ -4,4 +4,5 @@
 .config/qutebrowser/crash_backup/
 .config/qutebrowser/webengine/
 .config/qutebrowser/quickmarks
+.config/gtk-3.0/bookmarks/
 .state/amm92/system-theme

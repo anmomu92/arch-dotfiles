@@ -27,12 +27,18 @@ if [ "${CURRENT_THEME}" == "dark" ]; then
     # GTK
     sed -i 's/color-scheme=prefer-dark/color-scheme=prefer-light/g' ~/.local/share/nwg-look/gsettings
 
+	# Zathura
+	cp "$HOME/.config/zathura/light-theme" "$HOME/.config/zathura/zathurarc"
+
 elif [ "${CURRENT_THEME}" == "light" ]; then
 	# We update the global option
 	echo "dark" > "$STATE_PATH/system-theme"
 
     # GTK
     sed -i 's/color-scheme=prefer-light/color-scheme=prefer-dark/g' ~/.local/share/nwg-look/gsettings
+
+	# Zathura
+	cp "$HOME/.config/zathura/dark-theme" "$HOME/.config/zathura/zathurarc"
 fi
 
 # Qutebrowser

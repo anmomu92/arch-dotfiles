@@ -25,7 +25,7 @@ We only need to match the file name and use 'inc' to incdicate that
     #define BLUE_LIGHT_FILTER_TEMPERATURE 3000.0 // Default fallback value
 #endif
 #ifndef BLUE_LIGHT_FILTER_INTENSITY
-    #define BLUE_LIGHT_FILTER_INTENSITY 0.25 // Default fallback value
+    #define BLUE_LIGHT_FILTER_INTENSITY 0.5 // Default fallback value
 #endif
 
 
