@@ -1,7 +1,8 @@
 # Custom search engines
 c.url.searchengines = {
-    'DEFAULT': 'https://search.brave.com/search?q={}',
+    'DEFAULT': 'https://duckduckgo.com/?q={}',
     'g': 'https://www.google.com/search?q={}',
+    'q': 'https://www.qwant.com/?q={}',
     'ddg': 'https://duckduckgo.com/?q={}',
     'b': 'https://search.brave.com/search?q={}',
     'wes': 'https://es.wikipedia.org/wiki/{}',
