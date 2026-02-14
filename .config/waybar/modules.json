@@ -57,7 +57,7 @@
 	  "format": "  {}",
 	  "escape": true,
 	  "return-type": "json",
-	  "exec": "~/.config/amm92/scripts/updates.sh",
+	  "exec": "~/.local/scripts/updates.sh",
 	  "interval": 1800,
 	  "signal": 1,
 	  "hide-empty-text": true,
