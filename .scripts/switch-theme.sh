@@ -1,28 +1,46 @@
 #!/bin/bash
 
-LOG_PATH="$HOME/.local/log"
-LOG_FILE="$LOG_PATH/switch-theme.log"
-STATE_PATH="$HOME/.local/state/amm92"
-DOCK_STATE=$(<"$STATE_PATH/dock")
+# DEPENDENCIES
+# ------------
+#
+# - matugen
+# - zsh
+# - nwg-dock-hyprland
 
+# VARIABLES
+
+LOG_PATH="$HOME/.local/log"
+WP_PATH="${HOME}/.local/share/wallpapers/${SYS_THEME}"
+STATE_PATH="$HOME/.local/state/amm92"
+
+LOG_FILE="$LOG_PATH/switch-theme.log"
+DOCK_STATE=$(<"$STATE_PATH/dock")
+WP="${WP_PATH}/default.jpg"
+
+# Check system theme state existance
 if [ ! -d "$STATE_PATH" ]; then 
 	mkdir -p "$STATE_PATH"
-	echo "light" > "$STATE_PATH/system-theme"
 elif [ ! -f "$STATE_PATH/system-theme" ]; then
-	echo "light" > "$STATE_PATH/system-theme"
+	touch "${STATE_PATH}/system-theme"
 fi
 
 CURRENT_THEME=$(<"$STATE_PATH/system-theme")
 
+# Log
 echo "SWITCH THEME SCRIPT LOG" | tee $LOG_FILE 
 echo "-----------------------" | tee -a $LOG_FILE 
 echo "" | tee -a $LOG_FILE 
 echo "Current theme is $CURRENT_THEME" | tee -a $LOG_FILE 
 
-# We switch the theme
+# Theme switch
 if [ "${CURRENT_THEME}" == "dark" ]; then
-	# We update the global option
-	echo "light" > "$STATE_PATH/system-theme"
+
+	# We update the global option and variable
+	NEW_THEME="light"
+	echo ${NEW_THEME} > "${STATE_PATH}/system-theme"
+
+	# TODO - Find a simpler fix
+	source ~/.zshenv
 
     # GTK
     sed -i 's/color-scheme=prefer-dark/color-scheme=prefer-light/g' ~/.local/share/nwg-look/gsettings
@@ -30,16 +48,34 @@ if [ "${CURRENT_THEME}" == "dark" ]; then
 	# Zathura
 	cp "$HOME/.config/zathura/light-theme" "$HOME/.config/zathura/zathurarc"
 
+	# Wallpaper
+	#hyprctl hyprpaper wallpaper 'HDMI-A-1, '$LIGHT_WP''
+	hyprpaper &
+
 elif [ "${CURRENT_THEME}" == "light" ]; then
-	# We update the global option
-	echo "dark" > "$STATE_PATH/system-theme"
+
+	# We update the global option and variable
+	NEW_THEME="dark"
+	echo ${NEW_THEME} > "$STATE_PATH/system-theme"
+
+	# TODO - Find a simpler fix
+	source ~/.zshenv
 
     # GTK
     sed -i 's/color-scheme=prefer-light/color-scheme=prefer-dark/g' ~/.local/share/nwg-look/gsettings
 
 	# Zathura
 	cp "$HOME/.config/zathura/dark-theme" "$HOME/.config/zathura/zathurarc"
+
+	# Wallpaper
+	# hyprctl hyprpaper wallpaper 'HDMI-A-1, '$DARK_WP''
+	hyprpaper &
+
+
 fi
+
+# Matugen
+matugen image "${WP}"
 
 # Qutebrowser
 if [ $(pgrep qutebrowser) ]; then
@@ -57,7 +93,7 @@ if [ $(pgrep -f nwg-dock-hyprland) ]; then
 fi
     
 # We notify the change 
-NEW_THEME=$(<"$STATE_PATH/system-theme")
+#NEW_THEME=$(<"$STATE_PATH/system-theme")
 notify-send "Theme switched to $NEW_THEME"
 
 echo "" | tee -a $LOG_FILE 
