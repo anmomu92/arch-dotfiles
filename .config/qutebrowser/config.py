@@ -2,7 +2,7 @@
 c = c
 config = config
 
-config.load_autoconfig()
+config.load_autoconfig(False)
 
 # Load modular config
 config.source('themes/gruvbox.py')
