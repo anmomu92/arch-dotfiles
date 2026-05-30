@@ -1,10 +1,12 @@
-# To avoid false errors caught by linters
+# Main qutebrowser config file
+
 c = c
 config = config
 
+# autoconfig
 config.load_autoconfig(False)
 
-# Load modular config
+# load configurations
 config.source('themes/gruvbox.py')
 config.source('bindings/keybindings.py')
 config.source('settings/general.py')

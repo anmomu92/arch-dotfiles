@@ -1,4 +1,4 @@
-# Custom search engines
+# Search engines
 c.url.searchengines = {
     'DEFAULT': 'https://duckduckgo.com/?q={}',
     'g': 'https://www.google.com/search?q={}',
