@@ -2,72 +2,258 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Página de inicio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300;400;500;700&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <div class="logo">Página de inicio</div>
-
-  <div class="panels">
-
-    <div class="panel">
-      <h2>Linux</h2>
-      <ul>
-        <li><a href="https://linuxtoday.com">Linux Today</a></li>
-        <li><a href="https://linuxinsider.com">Linux Insider</a></li>
-        <li><a href="https://omgubuntu.co.uk">OMG Ubuntu</a></li>
-        <li><a href="https://itsfoss.com">It's FOSS</a></li>
-        <li><a href="https://phoronix.com">Phoronix</a></li>
-      </ul>
+  <div class="noise"></div>
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-prompt">~/</span><span class="logo-text">startpage</span><span class="logo-cursor">▋</span>
+      </div>
+      <div class="header-meta">
+        <span id="clock"></span>
+        <span class="sep">·</span>
+        <span id="date-str"></span>
+      </div>
     </div>
+  </header>
 
-    <div class="panel">
-      <h2>Tech</h2>
-      <ul>
-        <li><a href="https://brutalist.report/topic/tech?">Brutalist Report Tech</a></li>
-        <li><a href="https://cvedetails.com">CVE Details</a></li>
-        <li><a href="https://arstechnica.com">Ars Technica</a></li>
-        <li><a href="https://tomshardware.com">Tom's Hardware</a></li>
-        <li><a href="https://zdnet.com">ZDNet</a></li>
-      </ul>
-    </div>
+  <main>
+    <div class="panels">
 
-    <div class="panel">
-      <h2>Dev</h2>
-      <ul>
-        <li><a href="https://github.com">GitHub</a></li>
-        <li><a href="https://gitlab.com">GitLab</a></li>
-        <li><a href="https://stackoverflow.com">Stack Overflow</a></li>
-        <li><a href="https://devdocs.io">DevDocs</a></li>
-        <li><a href="https://searchcode.com">Searchcode</a></li>
-      </ul>
-    </div>
+      <!-- Linux -->
+      <div class="panel" data-category="linux">
+        <div class="panel-header">
+          <h2><span class="cat-tag">[01]</span> Linux</h2>
+        </div>
+        <ul>
+          <li>
+            <a href="https://linuxtoday.com" data-url="https://linuxtoday.com">
+              <img class="favicon" src="https://www.google.com/s2/favicons?domain=linuxtoday.com&sz=32" alt="" loading="lazy">
+              <span class="link-text">Linux Today</span>
+              <span class="link-meta" data-key="linuxtoday.com"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://linuxinsider.com" data-url="https://linuxinsider.com">
+              <img class="favicon" src="https://www.google.com/s2/favicons?domain=linuxinsider.com&sz=32" alt="" loading="lazy">
+              <span class="link-text">Linux Insider</span>
+              <span class="link-meta" data-key="linuxinsider.com"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://omgubuntu.co.uk" data-url="https://omgubuntu.co.uk">
+              <img class="favicon" src="https://www.google.com/s2/favicons?domain=omgubuntu.co.uk&sz=32" alt="" loading="lazy">
+              <span class="link-text">OMG Ubuntu</span>
+              <span class="link-meta" data-key="omgubuntu.co.uk"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://itsfoss.com" data-url="https://itsfoss.com">
+              <img class="favicon" src="https://www.google.com/s2/favicons?domain=itsfoss.com&sz=32" alt="" loading="lazy">
+              <span class="link-text">It's FOSS</span>
+              <span class="link-meta" data-key="itsfoss.com"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://phoronix.com" data-url="https://phoronix.com">
+              <img class="favicon" src="https://www.google.com/s2/favicons?domain=phoronix.com&sz=32" alt="" loading="lazy">
+              <span class="link-text">Phoronix</span>
+              <span class="link-meta" data-key="phoronix.com"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
 
-    <div class="panel">
-      <h2>Actualidad</h2>
-      <ul>
-        <li><a href="https://x.com">X</a></li>
-        <li><a href="https://europapress.es">EuropaPress</a></li>
-        <li><a href="https://theobjective.com">The Objective</a></li>
-        <li><a href="https://elindependiente.com">El Independiente</a></li>
-        <li><a href="https://elconfidencial.com">El Confidencial</a></li>
-      </ul>
-    </div>
+      <!-- Tech -->
+      <div class="panel" data-category="tech">
+        <div class="panel-header">
+          <h2><span class="cat-tag">[02]</span> Tech</h2>
+        </div>
+        <ul>
+          <li>
+            <a href="https://brutalist.report/topic/tech" data-url="https://brutalist.report">
+              <img class="favicon" src="https://www.google.com/s2/favicons?domain=brutalist.report&sz=32" alt="" loading="lazy">
+              <span class="link-text">Brutalist Report</span>
+              <span class="link-meta" data-key="brutalist.report"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://cvedetails.com" data-url="https://cvedetails.com">
+              <img class="favicon" src="https://www.google.com/s2/favicons?domain=cvedetails.com&sz=32" alt="" loading="lazy">
+              <span class="link-text">CVE Details</span>
+              <span class="link-meta" data-key="cvedetails.com"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://arstechnica.com" data-url="https://arstechnica.com">
+              <img class="favicon" src="https://www.google.com/s2/favicons?domain=arstechnica.com&sz=32" alt="" loading="lazy">
+              <span class="link-text">Ars Technica</span>
+              <span class="link-meta" data-key="arstechnica.com"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://tomshardware.com" data-url="https://tomshardware.com">
+              <img class="favicon" src="https://www.google.com/s2/favicons?domain=tomshardware.com&sz=32" alt="" loading="lazy">
+              <span class="link-text">Tom's Hardware</span>
+              <span class="link-meta" data-key="tomshardware.com"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://zdnet.com" data-url="https://zdnet.com">
+              <img class="favicon" src="https://www.google.com/s2/favicons?domain=zdnet.com&sz=32" alt="" loading="lazy">
+              <span class="link-text">ZDNet</span>
+              <span class="link-meta" data-key="zdnet.com"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
 
-    <div class="panel">
-      <h2>Hardware</h2>
-      <ul>
-        <li><a href="https://eetimes.com">EETimes</a></li>
-        <li><a href="https://hackaday.com">Hackaday</a></li>
-        <li><a href="https://allaboutcircuits.com">All About Circuits</a></li>
-        <li><a href="https://semiengineering.com">Semiconductor Engineering</a></li>
-        <li><a href="https://electronicdesign.com">Electronic Design</a></li>
-      </ul>
-    </div>
+      <!-- Dev -->
+      <div class="panel" data-category="dev">
+        <div class="panel-header">
+          <h2><span class="cat-tag">[03]</span> Dev</h2>
+        </div>
+        <ul>
+          <li>
+            <a href="https://github.com" data-url="https://github.com">
+              <img class="favicon" src="https://www.google.com/s2/favicons?domain=github.com&sz=32" alt="" loading="lazy">
+              <span class="link-text">GitHub</span>
+              <span class="link-meta" data-key="github.com"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://gitlab.com" data-url="https://gitlab.com">
+              <img class="favicon" src="https://www.google.com/s2/favicons?domain=gitlab.com&sz=32" alt="" loading="lazy">
+              <span class="link-text">GitLab</span>
+              <span class="link-meta" data-key="gitlab.com"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://stackoverflow.com" data-url="https://stackoverflow.com">
+              <img class="favicon" src="https://www.google.com/s2/favicons?domain=stackoverflow.com&sz=32" alt="" loading="lazy">
+              <span class="link-text">Stack Overflow</span>
+              <span class="link-meta" data-key="stackoverflow.com"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://devdocs.io" data-url="https://devdocs.io">
+              <img class="favicon" src="https://www.google.com/s2/favicons?domain=devdocs.io&sz=32" alt="" loading="lazy">
+              <span class="link-text">DevDocs</span>
+              <span class="link-meta" data-key="devdocs.io"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://searchcode.com" data-url="https://searchcode.com">
+              <img class="favicon" src="https://www.google.com/s2/favicons?domain=searchcode.com&sz=32" alt="" loading="lazy">
+              <span class="link-text">Searchcode</span>
+              <span class="link-meta" data-key="searchcode.com"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
 
-  </div>
+      <!-- Actualidad -->
+      <div class="panel" data-category="actualidad">
+        <div class="panel-header">
+          <h2><span class="cat-tag">[04]</span> Actualidad</h2>
+        </div>
+        <ul>
+          <li>
+            <a href="https://x.com" data-url="https://x.com">
+              <img class="favicon" src="https://www.google.com/s2/favicons?domain=x.com&sz=32" alt="" loading="lazy">
+              <span class="link-text">X</span>
+              <span class="link-meta" data-key="x.com"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://europapress.es" data-url="https://europapress.es">
+              <img class="favicon" src="https://www.google.com/s2/favicons?domain=europapress.es&sz=32" alt="" loading="lazy">
+              <span class="link-text">EuropaPress</span>
+              <span class="link-meta" data-key="europapress.es"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://theobjective.com" data-url="https://theobjective.com">
+              <img class="favicon" src="https://www.google.com/s2/favicons?domain=theobjective.com&sz=32" alt="" loading="lazy">
+              <span class="link-text">The Objective</span>
+              <span class="link-meta" data-key="theobjective.com"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://elindependiente.com" data-url="https://elindependiente.com">
+              <img class="favicon" src="https://www.google.com/s2/favicons?domain=elindependiente.com&sz=32" alt="" loading="lazy">
+              <span class="link-text">El Independiente</span>
+              <span class="link-meta" data-key="elindependiente.com"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://elconfidencial.com" data-url="https://elconfidencial.com">
+              <img class="favicon" src="https://www.google.com/s2/favicons?domain=elconfidencial.com&sz=32" alt="" loading="lazy">
+              <span class="link-text">El Confidencial</span>
+              <span class="link-meta" data-key="elconfidencial.com"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
 
+      <!-- Hardware -->
+      <div class="panel" data-category="hardware">
+        <div class="panel-header">
+          <h2><span class="cat-tag">[05]</span> Hardware</h2>
+        </div>
+        <ul>
+          <li>
+            <a href="https://eetimes.com" data-url="https://eetimes.com">
+              <img class="favicon" src="https://www.google.com/s2/favicons?domain=eetimes.com&sz=32" alt="" loading="lazy">
+              <span class="link-text">EETimes</span>
+              <span class="link-meta" data-key="eetimes.com"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://hackaday.com" data-url="https://hackaday.com">
+              <img class="favicon" src="https://www.google.com/s2/favicons?domain=hackaday.com&sz=32" alt="" loading="lazy">
+              <span class="link-text">Hackaday</span>
+              <span class="link-meta" data-key="hackaday.com"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://allaboutcircuits.com" data-url="https://allaboutcircuits.com">
+              <img class="favicon" src="https://www.google.com/s2/favicons?domain=allaboutcircuits.com&sz=32" alt="" loading="lazy">
+              <span class="link-text">All About Circuits</span>
+              <span class="link-meta" data-key="allaboutcircuits.com"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://semiengineering.com" data-url="https://semiengineering.com">
+              <img class="favicon" src="https://www.google.com/s2/favicons?domain=semiengineering.com&sz=32" alt="" loading="lazy">
+              <span class="link-text">Semiconductor Eng.</span>
+              <span class="link-meta" data-key="semiengineering.com"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://electronicdesign.com" data-url="https://electronicdesign.com">
+              <img class="favicon" src="https://www.google.com/s2/favicons?domain=electronicdesign.com&sz=32" alt="" loading="lazy">
+              <span class="link-text">Electronic Design</span>
+              <span class="link-meta" data-key="electronicdesign.com"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div><!-- /panels -->
+  </main>
+
+  <footer>
+    <span id="total-visits"></span>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
