@@ -100,11 +100,12 @@ header {
 
 .header-inner {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   max-width: 1400px;
   margin: 0 auto;
   gap: 16px;
+  position: relative;
 }
 
 .logo {
@@ -156,6 +157,66 @@ header {
 #clock {
   color: var(--accent);
   font-weight: 500;
+}
+
+/* ── zk-viewer access point ─────────────────────────────── */
+.zk-link {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  letter-spacing: 0.03em;
+  transition: color var(--transition), border-color var(--transition),
+              background var(--transition), box-shadow var(--transition);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.zk-link:hover {
+  color: var(--accent);
+  border-color: var(--accent-dim);
+  background: var(--accent-glow);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.zk-icon {
+  color: var(--cat-fg);
+  font-size: 0.9rem;
+  line-height: 1;
+  transition: color var(--transition);
+}
+
+.zk-link:hover .zk-icon {
+  color: var(--accent);
+}
+
+.zk-addr {
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  font-weight: 300;
+  transition: color var(--transition);
+}
+
+.zk-link:hover .zk-addr {
+  color: var(--accent-dim);
+}
+
+@media (max-width: 520px) {
+  .zk-link {
+    position: static;
+    transform: none;
+    font-size: 0.72rem;
+    padding: 5px 10px;
+  }
+  .zk-addr { display: none; }
 }
 
 /* ============================================================
