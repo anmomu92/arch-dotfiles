@@ -73,6 +73,10 @@ hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
 
+-- brightness control
+hl.bind(mainMod .. " + U", hl.dsp.exec_cmd("hyprctl hyprsunset gamma +10"), { locked = true })
+hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("hyprctl hyprsunset gamma -10"), { locked = true })
+
 -- -------
 -- ACTIONS
 -- -------
