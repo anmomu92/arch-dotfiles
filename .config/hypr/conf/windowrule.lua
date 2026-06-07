@@ -4,8 +4,9 @@
 hl.window_rule({
 	name = "brave",
 	match = {
-		class = "brave-browser"
+		class = "brave-browser",
 	},
+	no_blur = false,
 	workspace = 1,
 })
 
@@ -13,8 +14,9 @@ hl.window_rule({
 hl.window_rule({
 	name = "kitty",
 	match = {
-		class = "kitty"
+		class = "kitty",
 	},
+	no_blur = false,
 	workspace = 10,
 })
 
@@ -22,8 +24,9 @@ hl.window_rule({
 hl.window_rule({
 	name = "signal",
 	match = {
-		class = "signal"
+		class = "signal",
 	},
+	no_blur = false,
 	workspace = 8,
 })
 
@@ -31,8 +34,9 @@ hl.window_rule({
 hl.window_rule({
 	name = "volume-control",
 	match = {
-		class = "org.pulseaudio.pavucontrol"
+		class = "org.pulseaudio.pavucontrol",
 	},
-	size = {"window_w * 1.5", "window_h * 1.5"},
+	size = { "window_w * 1.5", "window_h * 1.5" },
+	no_blur = false,
 	float = true,
 })
