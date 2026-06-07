@@ -1,4 +1,4 @@
-hl.on("hyprland.start", function ()
+hl.on("hyprland.start", function()
 	-- environment for xdg-desktop-portal-hyprland
 	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 	--set sounds
@@ -32,4 +32,8 @@ hl.on("hyprland.start", function ()
 	hl.exec_cmd("hyprsunset")
 	-- start hyprpaper
 	hl.exec_cmd("hyprpaper")
+	-- start browser
+	hl.exec_cmd("brave")
+	-- start signal
+	hl.exec_cmd("signal-desktop")
 end)
