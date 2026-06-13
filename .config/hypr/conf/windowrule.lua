@@ -40,3 +40,23 @@ hl.window_rule({
 	no_blur = false,
 	float = true,
 })
+
+-- anki
+hl.window_rule({
+	name = "anki",
+	match = {
+		class = "anki",
+	},
+	no_blur = false,
+	workspace = 7,
+})
+
+--
+hl.window_rule({
+	name = "audacity",
+	match = {
+		class = "Audacity",
+	},
+	no_blur = false,
+	workspace = 9,
+})
