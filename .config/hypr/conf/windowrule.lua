@@ -51,7 +51,7 @@ hl.window_rule({
 	workspace = 7,
 })
 
---
+-- audacity
 hl.window_rule({
 	name = "audacity",
 	match = {
@@ -59,4 +59,14 @@ hl.window_rule({
 	},
 	no_blur = false,
 	workspace = 9,
+})
+
+-- zathura
+hl.window_rule({
+	name = "zathura",
+	match = {
+		class = "org.pwmt.zathura",
+	},
+	no_blur = false,
+	workspace = 5,
 })
