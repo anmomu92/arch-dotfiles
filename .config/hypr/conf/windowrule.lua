@@ -68,5 +68,15 @@ hl.window_rule({
 		class = "org.pwmt.zathura",
 	},
 	no_blur = false,
-	workspace = 5,
+	workspace = 10,
+})
+
+-- nautilus
+hl.window_rule({
+	name = "nautilus",
+	match = {
+		class = "org.gnome.Nautilus",
+	},
+	no_blur = false,
+	float = true,
 })
