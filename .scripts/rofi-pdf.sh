@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SEARCH_DIR="${1:-$HOME/Documents/lectura}"
+SEARCH_DIR="${1:-$HOME/Documents/books}"
 PDF_ICON="\uf1c1"  # Use a Nerd Font icon if preferred
 
 # Find all PDFs and store full paths
