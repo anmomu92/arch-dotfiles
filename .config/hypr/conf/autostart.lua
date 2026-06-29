@@ -34,6 +34,6 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("hyprpaper")
 	-- start browser
 	hl.exec_cmd("brave")
-	-- start signal
-	hl.exec_cmd("signal-desktop")
+	-- start zk-graph-viz
+	hl.exec_cmd("zk-graph-viz")
 end)
