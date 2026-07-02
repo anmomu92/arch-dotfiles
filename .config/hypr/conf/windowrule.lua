@@ -80,3 +80,13 @@ hl.window_rule({
 	no_blur = false,
 	float = true,
 })
+
+-- kdenlive
+hl.window_rule({
+	name = "kdenlive",
+	match = {
+		class = "org.kde.kdenlive",
+	},
+	no_blur = false,
+	workspace = 9,
+})
